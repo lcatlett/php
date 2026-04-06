@@ -48,7 +48,7 @@ jobs:
           while read -r filepath; do
             filename=$(basename "$filepath")
             echo "Downloading: $filename"
-            curl -fL -o "downloads/$filename" "https://dl.static-php.dev/$filepath"
+            curl -fL -o "downloads/$filename" "https://dl.static-php.dev${filepath}"
 
             # Validate the downloaded file is a real archive, not an error page
             filetype=$(file -b "downloads/$filename")
